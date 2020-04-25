@@ -51,7 +51,7 @@ async def show(ctx):
 
     elif 'all' not in uc[str(member.id)].keys():
         return await ctx.send('貴方がvcに入った合計時間のデータはありません')
-    await ctx.send(f'現在までに貴方がvcに入った時間は`{uc[str(member.id)]["all"]}秒です')
+    await ctx.send(f'現在までに貴方がvcに入った時間は`{uc[str(member.id)]["all"]}秒`です')
 
 
 @bot.command()
@@ -62,6 +62,6 @@ async def adshow(ctx, member: discord.Member):
 
     elif 'all' not in uc[str(member.id)].keys():
         return await ctx.send('貴方がvcに入った合計時間のデータはありません')
-    await ctx.send(f'現在までに{member.name}がvcに入った時間は`{uc[str(member.id)]["all"]}秒です')
+    await ctx.send(f'現在までに{member.name}がvcに入った時間は`{uc[str(member.id)]["all"]}秒`です')
 
 bot.run(botinfo.token)
