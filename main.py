@@ -27,7 +27,7 @@ async def on_ready():
     print("yes")
 
 @bot.event
-async on_voice_state_update(member, before, after):
+async def on_voice_state_update(member, before, after):
     dt_now = datetime.datetime.now()
     if str(member.id) not in uc.keys():
             uc[str(member.id)]= {}
