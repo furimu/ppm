@@ -56,7 +56,7 @@ async def show(ctx):
 
 @bot.command()
 @commands.has_permissions(administrator = True)
-async def adshow(ctx, member: discord.Member)
+async def adshow(ctx, member: discord.Member):
     if str(member.id) not in uc.keys():
         return await ctx.send('貴方がvcに入ったデータはありません')
 
