@@ -43,6 +43,7 @@ async def on_voice_state_update(member, before, after):
    
        else:
            all = int(uc[str(member.id)]["all"]) + (int(uc[str(member.id)]["end"]) - int(uc[str(member.id)]["start"]))
+       print(all)
        uc[str(member.id)]["all"] = str(all)
        save(uc, "user_count")
 
