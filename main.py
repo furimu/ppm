@@ -34,7 +34,7 @@ async def on_voice_state_update(member, before, after):
 
     if before.channel is None:
         uc[str(member.id)]["start"] = str(dt_now.second)
-        save(uc, user_count)
+        save(uc, "user_count")
 
     if after.channel is None:
        uc[str(member.id)]["end"] = str(dt_now.second)   
@@ -44,7 +44,7 @@ async def on_voice_state_update(member, before, after):
        else:
            all = int(uc[str(member.id)]["all"]) + (int(uc[str(member.id)]["end"]) - int(uc[str(member.id)]["start"]))
        uc[str(member.id)]["all"] = str(all)
-       save(uc, user_count)
+       save(uc, "user_count")
 
 
 @bot.command()
