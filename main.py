@@ -1,5 +1,6 @@
 from discord.ext import commands
 from datetime import datetime
+import discord
 
 bot = commands.Bot(command_prefix="p:")
 
@@ -40,6 +41,16 @@ async on_voice_state_update(member, before, after):
        uc[str(member.id)]["all"] = str(all)
        save(uc, user_count)
 
+
+@bot.command()
+async def show(ctx):
+    member = ctx.author
+    if str(member.id) not in uc.keys():
+        return await ctx.send('貴方がvcに入ったデータはありません')
+
+    elif 'all' not in uc[str(member.id)].keys():
+        return await ctx.send('貴方がvcに入った合計時間のデータはありません')
+    await ctx.send(f'現在までに貴方がvcに入った時間は`{uc[str(member.id)]["all"]}秒です')
 
        
        
