@@ -40,6 +40,7 @@ async def on_voice_state_update(member, before, after):
        uc[str(member.id)]["end"] = str(dt_now.second)   
        if 'all' not in uc[str(member.id)].keys():
            all = int(uc[str(member.id)]["end"]) - int(uc[str(member.id)]["start"])
+   
        else:
            all = int(uc[str(member.id)]["all"]) + int(uc[str(member.id)]["end"]) - int(uc[str(member.id)]["start"])
        uc[str(member.id)]["all"] = str(all)
