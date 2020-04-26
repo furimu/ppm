@@ -69,4 +69,6 @@ async def adshow(ctx, member: discord.Member):
         return await ctx.send(f'{member.name}がvcに入った合計時間のデータはありません')
     await ctx.send(f'現在までに{member.name}がvcに入った時間は`{uc[str(member.id)]["all"]}秒`です')
 
+@bot.command
+
 bot.run(botinfo.token)
