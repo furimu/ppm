@@ -86,8 +86,11 @@ class User_Counter(commands.Cog):
         e = discord.Embed(
             title = f"**Top{limit}**")
         count = 0
-        for l in range(limit):
-            for r in sorted(result, reverse=True):
+
+
+        for r in sorted(result, reverse=True):
+            for l in range(limit):
+           
                 m = ctx.guild.get_member(int(r))
                 count = count +1
                 e.add_field( 
