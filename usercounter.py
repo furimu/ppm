@@ -1,4 +1,24 @@
 from discord.ext import commands
+import json
+
+ 
+DEFAULT_MESSAGE = {}
+ 
+def save(value, module):
+    with open(f'{module}.json', 'w', encoding= 'utf-8') as f:
+        return json.dump(value, f, ensure_ascii=False, indent=4)
+ 
+ 
+def load(module):
+    try:
+        with open(f'{module}.json', encoding='utf-8') as f:
+            return json.load(f)
+ 
+    except OSError:
+        save(DEFAULT_MESSAGE, module)
+ 
+uc= load("user_count")
+
 
 class User_Count(commands.Cog):
     def __init(self, bot):
