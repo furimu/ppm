@@ -68,7 +68,8 @@ class User_Counter(commands.Cog):
         await ctx.send(f'現在までに{member.name}がvcに入った時間は`{uc[str(member.id)]["all"]}秒`です')
 
     @commands.command()
-    async def top_(self, limit: int):
+    async def top_(self, ctx,
+limit: int):
         mem = {}
         for member in ctx.guild.members:
             for k, v in uc[str(member.id)]:
