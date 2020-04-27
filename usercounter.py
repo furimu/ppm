@@ -74,7 +74,7 @@ class User_Counter(commands.Cog):
         for member in ctx.guild.members:
             if str(member.id) not in uc.keys():
                 continue
-            for k, v in uc[str(member.id)]:
+            for k, v in uc[str(member.id)].items():
                 if k != 'all':
                     continue
                 mem[str(member.id)] = str(uc[str(member.id)]["all"])
