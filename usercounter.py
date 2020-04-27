@@ -45,4 +45,7 @@ class User_Count(commands.Cog):
  
         elif 'all' not in uc[str(member.id)].keys():
             return await ctx.send(f'{member.name}がvcに入った合計時間のデータはありません')
-        await ctx.send(f'現在までに{member.name}がvcに入った時間は`{uc[str(member.id)]["alcommand_Cog
+        await ctx.send(f'現在までに{member.name}がvcに入った時間は`{uc[str(member.id)]["all"]}秒`です')
+
+def setup(bot):
+    bot.add_cog(User_Counter(bot))
