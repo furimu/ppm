@@ -89,7 +89,7 @@ class User_Counter(commands.Cog):
             for r in sorted(result, reverse=True):
                 m = ctx.guild.get_member(int(r))
                 e.add_field( 
-                    name= m.mention,
+                    name= m.name,
                     value = str(uc[r]["all"]),
                     inline=True)
       
