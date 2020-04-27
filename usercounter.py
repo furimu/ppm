@@ -1,6 +1,6 @@
 from discord.ext import commands
 import json
-
+import discord
  
 DEFAULT_MESSAGE = {}
  
@@ -66,6 +66,32 @@ class User_Count(commands.Cog):
         elif 'all' not in uc[str(member.id)].keys():
             return await ctx.send(f'{member.name}がvcに入った合計時間のデータはありません')
         await ctx.send(f'現在までに{member.name}がvcに入った時間は`{uc[str(member.id)]["all"]}秒`です')
+
+    @commands.command()
+    async def top_(self, limit: int):
+        mem = {}
+        for member in ctx.guild.members:
+            for k, v in uc[str(member.id)]:
+                if k != 'all':
+                    continue
+                mem[str(member.id)] = str(uc[str(member.id)]["all"])
+
+            else:
+                continue
+
+        result= sorted(mem, reverse=True)
+        e = discord.Embed(
+            title = f"**Top{limit}**")
+        for l in range(limit + 1):
+            for r in sorted(result, reverse=True):
+                m = ctx.guild.get_member(int(r))
+                e.add_field( 
+                    name= m.mention,
+                    value = str(uc[r][all"]),
+                    inline=True)
+      
+
+        await ctx.send(embed=e)
 
 def setup(bot):
     bot.add_cog(User_Counter(bot))
