@@ -6,7 +6,7 @@ import json
 bot = commands.Bot(command_prefix="p:")
 
 cogs = [
-    'usercount'
+    'usercounter'
 ]
 
 send_error_channel = bot.get_channel(663772130978168842)
