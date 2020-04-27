@@ -25,7 +25,7 @@ class User_Count(commands.Cog):
         self.bot = bot
 
     @commands.Cog.listener()
-    async def on_voice_state_update(member, before, after):
+    async def on_voice_state_update(self, member, before, after):
         dt_now = datetime.now()
         if str(member.id) not in uc.keys():
             uc[str(member.id)]= {}
@@ -47,7 +47,7 @@ class User_Count(commands.Cog):
  
  
     @commands.command()
-    async def show(ctx):
+    async def show(self, ctx):
         member = ctx.author
         if str(member.id) not in uc.keys():
             return await ctx.send('貴方がvcに入ったデータはありません')
@@ -59,7 +59,7 @@ class User_Count(commands.Cog):
  
     @commands.command()
     @commands.has_permissions(administrator = True)
-    async def adshow(ctx, member: discord.Member):
+    async def adshow(self, ctx, member: discord.Member):
         if str(member.id) not in uc.keys():
             return await ctx.send(f'{member.name}がvcに入ったデータはありません')
  
