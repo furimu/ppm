@@ -38,7 +38,7 @@ class User_Count(commands.Cog):
  
  
     @commands.command()
-commands.has_permissions(administrator = True)
+    @commands.has_permissions(administrator = True)
 async def adshow(ctx, member: discord.Member):
     if str(member.id) not in uc.keys():
         return await ctx.send(f'{member.name}がvcに入ったデータはありません')
