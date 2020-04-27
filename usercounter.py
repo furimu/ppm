@@ -39,10 +39,10 @@ class User_Count(commands.Cog):
  
     @commands.command()
     @commands.has_permissions(administrator = True)
-async def adshow(ctx, member: discord.Member):
-    if str(member.id) not in uc.keys():
-        return await ctx.send(f'{member.name}がvcに入ったデータはありません')
+    async def adshow(ctx, member: discord.Member):
+        if str(member.id) not in uc.keys():
+            return await ctx.send(f'{member.name}がvcに入ったデータはありません')
  
-    elif 'all' not in uc[str(member.id)].keys():
-        return await ctx.send(f'{member.name}がvcに入った合計時間のデータはありません')
-    await ctx.send(f'現在までに{member.name}がvcに入った時間は`{uc[str(member.id)]["alcommand_Cog
+        elif 'all' not in uc[str(member.id)].keys():
+            return await ctx.send(f'{member.name}がvcに入った合計時間のデータはありません')
+        await ctx.send(f'現在までに{member.name}がvcに入った時間は`{uc[str(member.id)]["alcommand_Cog
