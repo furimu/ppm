@@ -4,7 +4,7 @@ class User_Count(commands.Cog):
     def __init(self, bot):
         self.bot = bot
 
-    @commands.
+    @commands.Cog.lstener()
 async def on_voice_state_update(member, before, after):
     dt_now = datetime.now()
     if str(member.id) not in uc.keys():
