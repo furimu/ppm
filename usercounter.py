@@ -91,7 +91,7 @@ class User_Counter(commands.Cog):
                 m = ctx.guild.get_member(int(r))
                 count = count +1
                 e.add_field( 
-                    name= f"{count}{m.name}",
+                    name= f"{count}: {m.name}",
                     value = str(uc[r]["all"]),
                     inline=True)
       
