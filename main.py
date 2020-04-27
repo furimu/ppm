@@ -18,7 +18,7 @@ for cog in cogs:
         pass
  
     except Exception:
-    await send_error_channel.send(f'```py\n{traceback.format_exc()}\n```')
+        await send_error_channel.send(f'```py\n{traceback.format_exc()}\n```')
 
 
 @bot.event
