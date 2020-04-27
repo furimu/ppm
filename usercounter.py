@@ -20,7 +20,7 @@ def load(module):
 uc= load("user_count")
 
 
-class User_Count(commands.Cog):
+class User_Counter(commands.Cog):
     def __init(self, bot):
         self.bot = bot
 
