@@ -87,7 +87,7 @@ class User_Count(commands.Cog):
                 m = ctx.guild.get_member(int(r))
                 e.add_field( 
                     name= m.mention,
-                    value = str(uc[r][all"]),
+                    value = str(uc[r]["all"]),
                     inline=True)
       
 
