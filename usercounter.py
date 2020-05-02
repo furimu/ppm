@@ -19,6 +19,7 @@ def load(module):
         save(DEFAULT_MESSAGE, module)
  
 uc= load("user_count")
+al = load("all")
 
 
 class User_Counter(commands.Cog):
@@ -32,16 +33,22 @@ class User_Counter(commands.Cog):
             uc[str(member.id)]= {}
  
         if before.channel is None:
-            uc[str(member.id)]["start"] = str(dt_now.second)
+            uc[str(member.id)]["starthours"] = str(dt_now.hour)
+            uc[str(member.id)]["startminutes"] = str(dt_now.minute)
+
+            uc[str(member.id)]["startsecond"] = str(dt_now.second)
+
             save(uc, "user_count")
  
         if after.channel is None:
-           uc[str(member.id)]["end"] = str(dt_now.second)   
-           if 'all' not in uc[str(member.id)].keys():
-               all = int(uc[str(member.id)]["end"]) - int(uc[str(member.id)]["start"])
-   
-           else:
-               all = int(uc[str(member.id)]["all"]) + (int(uc[str(member.id)]["end"]) - int(uc[str(member.id)]["start"]))
+           uc[str(member.id)]["endhours"] = str(dt_now.hour)
+           uc[str(member.id)]["endminutes"] = str(dt_now.minute)
+
+           uc[str(member.id)]["endsecond"] = str(dt_now.second)   
+           save(uc, "user_count")
+             
+
+         
 
            uc[str(member.id)]["all"] = str(all)
            save(uc, "user_count")
