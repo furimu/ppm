@@ -77,7 +77,7 @@ class User_Counter(commands.Cog):
  
         elif 'all' not in uc[str(member.id)].keys():
             return await ctx.send('貴方がvcに入った合計時間のデータはありません')
-        await ctx.send(f'現在までに貴方がvcに入った時間は`{uc[str(member.id)]["all"]}秒`です')
+        await ctx.send(f'現在までに貴方がvcに入った時間は`{al[str(member.id)]["hour"]}時間{al[str(member.id)]["minute"]}分{al[str(member.id)]["second"]}秒`です')
  
  
     @commands.command()
@@ -86,25 +86,14 @@ class User_Counter(commands.Cog):
         if str(member.id) not in uc.keys():
             return await ctx.send(f'{member.name}がvcに入ったデータはありません')
  
-        elif 'all' not in uc[str(member.id)].keys():
+        elif 'hour' not in al[str(member.id)].keys():
             return await ctx.send(f'{member.name}がvcに入った合計時間のデータはありません')
-        await ctx.send(f'現在までに{member.name}がvcに入った時間は`{uc[str(member.id)]["all"]}秒`です')
+        await ctx.send(f'現在までに{member.name}がvcに入った時間は`{al[str(member.id)]["hour"]}時間{al[str(member.id)]["minute"]}分{al[str(member.id)]["second"]}秒`です')
 
     @commands.command()
     async def top_(self, ctx,limit: int):
-        mem = {}
-        for member in ctx.guild.members:
-            if str(member.id) not in uc.keys():
-                continue
-            for k, v in uc[str(member.id)].items():
-                if k != 'all':
-                    continue
-                mem[str(member.id)] = str(uc[str(member.id)]["all"])
-
-            else:
-                continue
-
-        result= sorted(mem, reverse=True)
+        
+        result= sorted(al.items(), key = lambda x: (x[str(m.id) for m in ctx.guild.members]["hour"], x [str(m.id) for m in ctx.guild.members]["minute"]), reverse=True)
         e = discord.Embed(
             title = f"**Top{limit}**")
         count = 0
