@@ -31,7 +31,10 @@ class User_Counter(commands.Cog):
         dt_now = datetime.now()
         if str(member.id) not in uc.keys():
             uc[str(member.id)]= {}
- 
+
+       
+
+
         if before.channel is None:
             uc[str(member.id)]["starthours"] = str(dt_now.hour)
             uc[str(member.id)]["startminutes"] = str(dt_now.minute)
@@ -46,12 +49,24 @@ class User_Counter(commands.Cog):
 
            uc[str(member.id)]["endsecond"] = str(dt_now.second)   
            save(uc, "user_count")
+
+        ho= int(uc[str(member.id)]["endhours"]) - int(uc[str(member.id)]["starthours"])
+
+        minu= int(uc[str(member.id)]["endminutes"]) - int(uc[str(member.id)]["startminutes"])
+
+        seco = int(uc[str(member.id)]["endsecond"]) - int(uc[str(member.id)]["startsecond"])
              
+        if str(member.id) not in al.keys():
+            al[str(member.id)]= {}
 
-         
+        al[str(member.id)]["hour"] = ho
 
-           uc[str(member.id)]["all"] = str(all)
-           save(uc, "user_count")
+        al[str(member.id)]["minute"] = minu
+
+        
+        al[str(member.id)]["second"] = seco
+
+        save(al, "all")
  
  
     @commands.command()
