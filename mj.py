@@ -18,7 +18,7 @@ class MJ(commands.Cog):
            
 
             d[str(c)].append(str(member.id))
-            if len(d[str(c)] < limit:
+            if len(d[str(c)]) < limit:
                 c += 1
                 continue
             elif len(d[str(c)] == limit:
