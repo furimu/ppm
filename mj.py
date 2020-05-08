@@ -10,13 +10,17 @@ class MJ(commands.Cog):
         """役職でチームをわけます""
         d={}
         c=1
-        e = 
+        
         for member in role.members:
-        if c not in d.keys():
-            d[str(c)] = []
+            if c not in d.keys():
+                d[str(c)] = []
 
-        if len(d[str(c)] == limit:
-            c += 1
-            continue
+            if len(d[str(c)] == limit:
+                c += 1
+                continue
+
+            d[str(c)].append(str(member.id))
+
+
 
         
