@@ -19,7 +19,7 @@ class MJ(commands.Cog):
            
 
             d[str(c)].append(str(member.id))
-            await ctx.send(member.id)
+            await ctx.send(len(d[str(c)]))
             if len(d[str(c)]) > limit:
                 await ctx.send(c)
                 c += 1
