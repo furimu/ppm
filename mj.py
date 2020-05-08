@@ -16,14 +16,17 @@ class MJ(commands.Cog):
             if c not in d.keys():
                 d[str(c)] = []
 
-            print(str(member))
+            await ctx.send(str(member))
            
 
             d[str(c)].append(str(member.id))
+            await ctx.send(member.id)
             if len(d[str(c)]) < limit:
+                await ctx.send(c)
                 c += 1
                 continue
             elif len(d[str(c)]) == limit:
+                await ctx.send(a)
                 e = emb(title=f"{c}番のチーム", desc=",".join(ctx.guild.get_member(int(m).mention for m in d[str(c)])))
                 await ctx.send(embed=e)
 
