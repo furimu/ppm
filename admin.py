@@ -21,7 +21,6 @@ class Admin(commands.Cog, command_attrs=dict(hidden=True)):
  
     @commands.command()
     async def load(self, ctx, module:str, opt:str = None):
-        module = f'cogs.{module}'
         if opt is None:
             self.bot.load_extension(module)
  
