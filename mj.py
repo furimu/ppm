@@ -1,5 +1,6 @@
 from discord.ext import commands
-import discord, emb
+import discord, emb,
+traceback
 
 class MJ(commands.Cog):
     def __init__(self, bot):
@@ -28,7 +29,7 @@ class MJ(commands.Cog):
 
     @team_sprit.error
     async def team_error(self, ctx, error):
-        
+        await ctx.send(f'```py\n{traceback.format_exc()}\n```')
            
 
 def setup(bot):
