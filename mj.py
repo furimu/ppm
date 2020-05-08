@@ -7,7 +7,7 @@ class MJ(commands.Cog):
 
     @commands.command(name="チーム分け")
     async def team_sprit(self, ctx, role:discord.Role, limit:int):
-        """役職でチームをわけます""
+        """役職でチームをわけます"""
         d={}
         c=1
         
