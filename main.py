@@ -7,7 +7,6 @@ import traceback
 bot = commands.Bot(command_prefix="p:")
 
 cogs = [
-    'usercounter',
     'admin',
     'mj'
 ]
