@@ -12,7 +12,7 @@ class MJ(commands.Cog):
         c=1
         
         for member in role.members:
-            if c not in d.keys():
+            if str(c) not in d.keys():
                 d[str(c)] = []
 
             await ctx.send(str(member))
