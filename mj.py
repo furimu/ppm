@@ -22,7 +22,7 @@ class MJ(commands.Cog):
                 c += 1
                 continue
             elif len(d[str(c)]) == limit:
-                e emb(title=f"{c}番のチーム", desc=",".join(ctx.guild.get_member(int(m).mention for m in d[str(c)]))
+                e emb(title=f"{c}番のチーム", desc=",".join(ctx.guild.get_member(int(m).mention for m in d[str(c)])))
 
            
 
