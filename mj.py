@@ -25,6 +25,9 @@ class MJ(commands.Cog):
                 e = emb.ma(title=f"{c}番のチーム", desc=",".join(ctx.guild.get_member(int(m)).mention for m in d[str(c)]))
                 await ctx.send(embed=e)
 
+            elif len(d[str(c)]) < limit:
+                e = emb.ma(title=f"{c}番のチーム", desc=",".join(ctx.guild.get_member(int(m)).mention for m in d[str(c)]))
+                await ctx.send(embed=e)
     @team_sprit.error
     async def team_error(self, ctx, error):
         await ctx.send(f'```py\n{traceback.format_exc()}\n```')
