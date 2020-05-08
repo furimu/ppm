@@ -19,7 +19,7 @@ class MJ(commands.Cog):
            
 
             d[str(c)].append(str(member.id))
-            en= emb.ma("たいた", ','.join(ctx.guild.get_member(int(m).mention for m in d[str(c)])))
+            en= emb.ma("たいた", ','.join(ctx.guild.get_member(int(m)).mention for m in d[str(c)]))
             await ctx.send(embed=en)
             if len(d[str(c)]) > limit:
                 await ctx.send(c)
@@ -27,7 +27,7 @@ class MJ(commands.Cog):
                 continue
             elif len(d[str(c)]) == limit:
                 await ctx.send(a)
-                e = emb.ma(title=f"{c}番のチーム", desc=",".join(ctx.guild.get_member(int(m).mention for m in d[str(c)])))
+                e = emb.ma(title=f"{c}番のチーム", desc=",".join(ctx.guild.get_member(int(m)).mention for m in d[str(c)]))
                 await ctx.send(embed=e)
 
     @team_sprit.error
