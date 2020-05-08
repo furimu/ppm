@@ -14,19 +14,15 @@ class MJ(commands.Cog):
         for member in role.members:
             if str(c) not in d.keys():
                 d[str(c)] = []
-
-            await ctx.send(str(member))
            
-
             d[str(c)].append(str(member.id))
-            en= emb.ma("たいた", ','.join(ctx.guild.get_member(int(m)).mention for m in d[str(c)]))
-            await ctx.send(embed=en)
+ 
             if len(d[str(c)]) > limit:
                 await ctx.send(c)
                 c += 1
                 continue
             elif len(d[str(c)]) == limit:
-                await ctx.send(a)
+
                 e = emb.ma(title=f"{c}番のチーム", desc=",".join(ctx.guild.get_member(int(m)).mention for m in d[str(c)]))
                 await ctx.send(embed=e)
 
