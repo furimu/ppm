@@ -1,5 +1,5 @@
 from discord.ext import commands
-import discord
+import discord, emb
 
 class MJ(commands.Cog):
     def __init__(self, bot):
@@ -10,7 +10,7 @@ class MJ(commands.Cog):
         """役職でチームをわけます""
         d={}
         c=1
-        
+        e = 
         for member in role.members:
         if c not in d.keys():
             d[str(c)] = []
