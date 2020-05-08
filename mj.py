@@ -18,12 +18,13 @@ class MJ(commands.Cog):
            
 
             d[str(c)].append(str(member.id))
+            if len(d[str(c)] < limit:
+                c += 1
+                continue
             if len(d[str(c)] == limit:
                 e emb(title=f"{c}番のチーム", desc=",".join(ctx.guild.get_member(int(m).mention for m in d[str(c)])
 
-            elif len(d[str(c)] <= limit:
-                c += 1
-                continue
+           
 
 def setup(bot):
     bot.add_cog(MJ(bot))
