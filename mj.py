@@ -20,7 +20,7 @@ class MJ(commands.Cog):
 
             d[str(c)].append(str(member.id))
             en= emb.ma("たいた", ','.join(ctx.guild.get_member(int(m).mention for m in d[str(c)])))
-            await ctx.send(len(d[str(c)]))
+            await ctx.send(embed=en)
             if len(d[str(c)]) > limit:
                 await ctx.send(c)
                 c += 1
