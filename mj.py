@@ -15,6 +15,7 @@ class MJ(commands.Cog):
             if c not in d.keys():
                 d[str(c)] = []
 
+            print(str(member))
            
 
             d[str(c)].append(str(member.id))
